@@ -5,9 +5,9 @@ const sizes = getSizes()
 
 document.addEventListener(
     "change",
-    (event) => {
-        if (event.target.name === "size") {
-            window.alert(``)
+    (changeEvent) => {
+        if (changeEvent.target.name === "size") {
+            window.alert(`User chose ${changeEvent.target.name}`)
         }
     }
 )
@@ -16,9 +16,9 @@ export const DiamondSizes = () => {
     let html = "<ul>"
 
     // Use .map() for converting objects to <li> elements
-    const listItems = sizes.map(size => {
+    const listItems = sizes.map(sizeObj => {
         return `<li>
-            <input type="radio" name="size" value="${size.id}" /> ${size.carets}
+            <input type="radio" name="size" value="${sizeObj.id}" /> ${sizeObj.carets}
         </li>`
     })
 
