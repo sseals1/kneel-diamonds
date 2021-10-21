@@ -1,13 +1,15 @@
-import { getStyles } from "./database.js"
+import { getStyles, setStyle } from "./database.js"
 
 
 const Styles = getStyles()
+
+
 
 document.addEventListener(
     "change",
     (event) => {
         if (event.target.name === "Styles") {
-            window.alert(`User chose Styles ${event.target.value}`)
+            setStyle(parseInt(event.target.value))
         } 
     }
 )
