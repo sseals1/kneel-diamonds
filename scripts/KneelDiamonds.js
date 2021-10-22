@@ -1,20 +1,21 @@
 
 import { DiamondSizes } from "./DiamondSizes.js"
 import { JewelryStyles } from "./JewelryStyles.js"
-import { getOrders } from "./database.js"
 import { Metals } from "./Metals.js"
+import { Orders } from "./Orders.js"
 
 
-// const renderAllHTML = () => {
-//     mainContainer.innerHTML = Metals()
-// }
-// renderAllHTML()
 
-document.addEventListener(
-    "click",
-    (event) => {
-    }
-)
+
+
+// document.addEventListener(
+//     "change",
+//     (changeEvent) => {
+//         if (changeEvent.target.name === "size") {
+//             setSize(parseInt(changeEvent.target.value))
+//         }
+//     }
+// )
 
 export const KneelDiamonds = () => {
     return `
@@ -41,6 +42,7 @@ export const KneelDiamonds = () => {
 
         <article class="customOrders">
             <h2>Custom Jewelry Orders</h2>
+            ${Orders()}
         </article>
     `
 }
