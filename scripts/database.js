@@ -6,9 +6,8 @@
 
 */
 const database = {
-    orderBuilder: {
-        
-    },
+    
+    orderBuilder: {},
 
     styles: [
         { id: 1, style: "Classic", price: 500 },
@@ -16,11 +15,11 @@ const database = {
         { id: 3, style: "Vintage", price: 965 }
     ],
     sizes: [
-        { id: 1, carats: 0.5, price: 405 },
-        { id: 2, carats: 0.75, price: 782 },
-        { id: 3, carats: 1, price: 1470 },
-        { id: 4, carats: 1.5, price: 1997 },
-        { id: 5, carats: 2, price: 3638 }
+        { id: 1, carets: 0.5, price: 405 },
+        { id: 2, carets: 0.75, price: 782 },
+        { id: 3, carets: 1, price: 1470 },
+        { id: 4, carets: 1.5, price: 1997 },
+        { id: 5, carets: 2, price: 3638 }
     ],
     metals: [
         { id: 1, metal: "Sterling Silver", price: 12.42 },
@@ -40,20 +39,18 @@ const database = {
     ]
 }
 
+
 export const getMetals = () => {
     return database.metals.map(metal => ({...metal}))
 }
-
 export const getSizes = () => {
-    return database.sizes.map(sizes => ({...sizes}))
+    return database.sizes.map(size => ({...size}))
 }
-
 export const getStyles = () => {
-    return database.styles.map(styles => ({...styles}))
+    return database.styles.map(style => ({...style}))
 }
-
 export const getOrders = () => {
-    return database.customOrders.map(customOrders => ({...customOrders}))
+    return database.orders.map(order => ({...order}))
 }
 
 export const setMetal = (id) => {
@@ -67,7 +64,6 @@ export const setSize = (id) => {
 export const setStyle = (id) => {
     database.orderBuilder.styleId = id
 }
-
 
 
 export const addCustomOrder = () => {
@@ -90,4 +86,3 @@ export const addCustomOrder = () => {
     // Broadcast a notification that permanent state has changed
     document.dispatchEvent(new CustomEvent("stateChanged"))
 }
-
